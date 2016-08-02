@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarSimulator
 {
-    class Car
+    public abstract class Car
     {
         protected double speed;
         protected double fuelLevel;
@@ -20,6 +20,28 @@ namespace CarSimulator
         protected string drivetrain;
         protected int seats;
 
+        public virtual void accelerate()
+        {
+            
+        }
+
+        public virtual void decelerate()
+        {
+
+
+        }
+
+        public virtual void showDash()
+        {
+
+
+        }
+
+        public virtual void simulate()
+        {
+
+
+        }
 
 
 
