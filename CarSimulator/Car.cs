@@ -22,28 +22,29 @@ namespace CarSimulator
 
         public virtual void accelerate()
         {
-            
+            int tempHP = HP / 10;
+            int tempRPMs = HP * 5;
+            speed += tempHP;
+            RPM += tempRPMs;
         }
 
         public virtual void decelerate()
         {
-
-
+            int tempHP = HP / 10;
+            int tempRPMs = HP * 5;
+            speed -= tempHP;
+            RPM -= tempRPMs;
         }
 
         public virtual void showDash()
         {
-
+            Console.WriteLine("Current speed is " + speed + " and fuel level is" + fuelLevel + " at " + RPM + "RPMs");
 
         }
 
         public virtual void simulate()
         {
-
-
+            fuelLevel -= (RPM / speed);
         }
-
-
-
     }
 }
