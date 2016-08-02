@@ -17,7 +17,7 @@ namespace CarSimulator
         protected string color;
         protected string transmission;
         protected int HP;
-        protected string drivetrain;
+        protected string driveTrain;
         protected int seats;
 
         public virtual void accelerate()
