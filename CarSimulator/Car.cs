@@ -8,6 +8,8 @@ namespace CarSimulator
 {
     public abstract class Car
     {
+
+        public static double maxSpeed = 100;
         protected double speed;
         protected double fuelLevel;
         protected int RPM;
@@ -31,6 +33,11 @@ namespace CarSimulator
             int tempRPMs = HP * 5;
             speed += tempHP;
             RPM += tempRPMs;
+
+            if (speed > maxSpeed)
+            {
+                Console.WriteLine("Exceeding max speed");
+            }
         }
 
         public virtual void decelerate()
@@ -43,7 +50,7 @@ namespace CarSimulator
 
         public virtual void showDash()
         {
-            Console.WriteLine("Current speed is " + speed + " and fuel level is " +FuelPercentage+ " at " + RPM + " RPMs");
+            Console.WriteLine( "Current speed is " + speed + " and fuel level is " +FuelPercentage+ " at " + RPM + " RPMs");
         }
 
         public virtual void simulate()

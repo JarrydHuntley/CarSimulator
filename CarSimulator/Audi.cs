@@ -46,6 +46,11 @@ namespace CarSimulator
             
         }
 
+        public override void showDash()
+        {
+            Console.WriteLine(model +": Current speed is " + speed + " and fuel level is " + FuelPercentage + " at " + RPM + " RPMs");
+        }
+
 
     }
 }
