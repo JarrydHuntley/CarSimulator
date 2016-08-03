@@ -15,14 +15,13 @@ namespace CarSimulator
         protected string soundSystem;
 
         public Audi(string engine, string color, 
-            int doors, string make, string model, int year, string fuelType,
+            int doors, string model, int year, string fuelType,
             string soundSystem, int seats, int windows, string driveTrain,
-            string transmission)
+            string transmission, int HP)
         {
             this.doors = doors;
             this.engine = engine;
             this.color = color;
-            this.make = this.GetType().ToString();
             this.model = model;
             this.year = year;
             this.soundSystem = soundSystem;
@@ -31,11 +30,21 @@ namespace CarSimulator
             this.driveTrain = driveTrain;
             this.fuelType = fuelType;
             this.transmission = transmission;
+            this.HP = HP;
+
+            this.make = this.GetType().ToString();
             this.fuelLevel = 100.0;
             this.speed = 0;
         }
 
-
+        public override void simulate()
+        {
+            if (speed > 0)
+            {
+                fuelLevel -= ((RPM / speed) / 4);
+            }
+            
+        }
 
 
     }

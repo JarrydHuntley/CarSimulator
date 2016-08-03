@@ -20,6 +20,11 @@ namespace CarSimulator
         protected string driveTrain;
         protected int seats;
 
+        public string FuelPercentage
+        {
+            get { return fuelLevel+"%"; }
+        }
+
         public virtual void accelerate()
         {
             int tempHP = HP / 10;
@@ -38,13 +43,15 @@ namespace CarSimulator
 
         public virtual void showDash()
         {
-            Console.WriteLine("Current speed is " + speed + " and fuel level is" + fuelLevel + " at " + RPM + "RPMs");
-
+            Console.WriteLine("Current speed is " + speed + " and fuel level is " +FuelPercentage+ " at " + RPM + " RPMs");
         }
 
         public virtual void simulate()
         {
-            fuelLevel -= (RPM / speed);
+            if (speed > 0)
+            {
+                fuelLevel -= ((RPM / speed) / 2);
+            }
         }
     }
 }
